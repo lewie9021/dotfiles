@@ -120,7 +120,7 @@ values."
    dotspacemacs-inactive-transparency 90
    dotspacemacs-mode-line-unicode-symbols nil
    dotspacemacs-smooth-scrolling t
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers nil
    dotspacemacs-smartparens-strict-mode nil
    dotspacemacs-highlight-delimiters 'all
    dotspacemacs-persistent-server nil
