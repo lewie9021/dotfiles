@@ -21,7 +21,7 @@ values."
    dotspacemacs-configuration-layers
    '(
      auto-completion
-     ;; better-defaults
+     colors
      emacs-lisp
      javascript
      html
