@@ -147,7 +147,17 @@ layers configuration. You are free to put any user code."
     (setq tern-command '("c:/Users/Lewis/AppData/Roaming/npm/tern")))
 
   ;; Provide access to clipboard entries created outside of Emacs.
-  (fset 'evil-visual-update-x-selection 'ignore))
+  (fset 'evil-visual-update-x-selection 'ignore)
+
+  ;; Binding for toggling whitespace. Useful when checking for tab indents.
+  (global-set-key (kbd "<f8>") 'whitespace-mode)
+
+  ;; Binding for removing tabs in buffer
+  (global-set-key
+   (kbd "<f7>")
+   (lambda ()
+     (interactive)
+     (untabify (point-min) (point-max)))))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
