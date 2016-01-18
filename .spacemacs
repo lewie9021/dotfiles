@@ -163,8 +163,24 @@ layers configuration. You are free to put any user code."
   (add-to-list 'auto-mode-alist '("\\.dust\\'" . web-mode))
   (setq web-mode-engines-alist  '(("dust" . "\\.dust\\'")))
 
+  ;; Declare 4 space indentations.
+  (setq web-mode-script-padding 4)
+  (setq web-mode-style-padding 4)
+  (setq web-mode-markup-indent-offset 4)
+  (setq web-mode-css-indent-offset 4)
+  (setq web-mode-code-indent-offset 4)
 
-  )
+  ;; Adds highlighting of many Ecma built-in functions.
+  (setq js2-highlight-level 3)
+
+  ;; Switch statement body is indented one additional level.
+  (setq js2-indent-switch-body t)
+
+  ;; Prevent warning if return values aren't the same.
+  (setq js2-strict-inconsistent-return-warning nil)
+
+  ;; Include Node.js externs in the master externs list.
+  (setq js2-include-node-externs t))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
