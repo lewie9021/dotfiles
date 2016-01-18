@@ -157,7 +157,14 @@ layers configuration. You are free to put any user code."
    (kbd "<f7>")
    (lambda ()
      (interactive)
-     (untabify (point-min) (point-max)))))
+     (untabify (point-min) (point-max))))
+
+  ;; Enable support for Dust templates.
+  (add-to-list 'auto-mode-alist '("\\.dust\\'" . web-mode))
+  (setq web-mode-engines-alist  '(("dust" . "\\.dust\\'")))
+
+
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
