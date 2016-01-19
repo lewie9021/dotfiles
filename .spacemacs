@@ -27,7 +27,7 @@ values."
      html
      ;; git
      markdown
-     ;; org
+     org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
