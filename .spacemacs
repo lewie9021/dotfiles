@@ -166,7 +166,6 @@ layers configuration. You are free to put any user code."
 
   (defun lewie9021/js2-mode-hook ()
     "Hook when js2-mode is enabled"
-    (auto-complete-mode t)
     (diff-hl-mode t))
 
   (add-hook 'js2-mode-hook 'lewie9021/js2-mode-hook)
