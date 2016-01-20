@@ -19,8 +19,7 @@ values."
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
-   '(
-     auto-completion
+   '(auto-completion
      colors
      emacs-lisp
      javascript
@@ -31,11 +30,12 @@ values."
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     '(spell-checking :variables
+     (spell-checking :variables
                       spell-checking-enable-by-default nil)
      syntax-checking
      unimpaired
-     '(version-control :variables
+     (version-control :variables
+                       version-control-diff-tool 'diff-hl
                        version-control-global-margin t))
 
    ;; List of additional packages that will be installed without being
@@ -43,7 +43,8 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
-   '(tern-auto-complete)
+   '(tern-auto-complete
+     diff-hl)
 
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
@@ -163,6 +164,18 @@ layers configuration. You are free to put any user code."
   (add-to-list 'auto-mode-alist '("\\.dust\\'" . web-mode))
   (setq web-mode-engines-alist  '(("dust" . "\\.dust\\'")))
 
+  (defun lewie9021/js2-mode-hook ()
+    "Hook when js2-mode is enabled"
+    (auto-complete-mode t)
+    (diff-hl-mode t))
+
+  (add-hook 'js2-mode-hook 'lewie9021/js2-mode-hook)
+
+  ;; Make diff-hl update the margin on the fly.
+  (setq diff-hl-flydiff-mode t)
+  ;; Make diff-hl show changes on the right margin.
+  (setq diff-hl-side 'right)
+
   ;; Declare 4 space indentations.
   (setq web-mode-script-padding 4)
   (setq web-mode-style-padding 4)
@@ -181,21 +194,3 @@ layers configuration. You are free to put any user code."
 
   ;; Include Node.js externs in the master externs list.
   (setq js2-include-node-externs t))
-
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (rainbow-mode rainbow-identifiers mmm-mode markdown-toc markdown-mode gh-md web-mode tagedit slim-mode scss-mode sass-mode less-css-mode jade-mode helm-css-scss haml-mode emmet-mode company-web flycheck-pos-tip flycheck ws-butler window-numbering which-key web-beautify volatile-highlights vi-tilde-fringe use-package tern-auto-complete spacemacs-theme spaceline smooth-scrolling restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el paradox page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme json-mode js2-refactor js-doc info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-jumper evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav define-word company-tern company-statistics company-quickhelp coffee-mode clean-aindent-mode buffer-move auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
