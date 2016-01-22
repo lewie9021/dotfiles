@@ -150,6 +150,9 @@ layers configuration. You are free to put any user code."
   ;; Provide access to clipboard entries created outside of Emacs.
   (fset 'evil-visual-update-x-selection 'ignore)
 
+  ;; Replace active region inserting text.
+  (delete-selection-mode 1)
+
   ;; Binding for toggling whitespace. Useful when checking for tab indents.
   (global-set-key (kbd "<f8>") 'whitespace-mode)
 
