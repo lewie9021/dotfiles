@@ -24,6 +24,7 @@ values."
      emacs-lisp
      javascript
      html
+     react
      ;; git
      markdown
      org
@@ -184,6 +185,7 @@ layers configuration. You are free to put any user code."
   (setq web-mode-markup-indent-offset 4)
   (setq web-mode-css-indent-offset 4)
   (setq web-mode-code-indent-offset 4)
+  (setq web-mode-attr-indent-offset 2)
 
   ;; Adds highlighting of many Ecma built-in functions.
   (setq js2-highlight-level 3)
