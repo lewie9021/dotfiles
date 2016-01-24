@@ -164,6 +164,9 @@ layers configuration. You are free to put any user code."
      (interactive)
      (untabify (point-min) (point-max))))
 
+  ;; Switching to a buffer will force normal mode.
+  (add-hook 'window-configuration-change-hook 'evil-force-normal-state)
+
   ;; Enable support for Dust templates.
   (add-to-list 'auto-mode-alist '("\\.dust\\'" . web-mode))
   (setq web-mode-engines-alist  '(("dust" . "\\.dust\\'")))
