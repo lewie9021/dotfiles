@@ -200,4 +200,8 @@ layers configuration. You are free to put any user code."
   (setq js2-strict-inconsistent-return-warning nil)
 
   ;; Include Node.js externs in the master externs list.
-  (setq js2-include-node-externs t))
+  (setq js2-include-node-externs t)
+
+  ;; Load computer-specific configuration.
+  (when (file-exists-p "~/local.el")
+    (load "~/local.el")))
