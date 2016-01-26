@@ -164,6 +164,10 @@ layers configuration. You are free to put any user code."
      (interactive)
      (untabify (point-min) (point-max))))
 
+  ;; Use the some of the default Emacs bindings in insert mode.
+  (define-key evil-insert-state-map (kbd "C-a") 'back-to-indentation)
+  (define-key evil-insert-state-map (kbd "C-e") 'move-end-of-line)
+
   ;; Switching to a buffer will force normal mode.
   (add-hook 'window-configuration-change-hook 'evil-force-normal-state)
 
