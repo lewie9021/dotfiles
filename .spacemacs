@@ -181,6 +181,9 @@ layers configuration. You are free to put any user code."
 
   (add-hook 'js2-mode-hook 'lewie9021/js2-mode-hook)
 
+  ;; Prevent line wrapping.
+  (set-default 'truncate-lines t)
+
   ;; Make diff-hl update the margin on the fly.
   (setq diff-hl-flydiff-mode t)
   ;; Make diff-hl show changes on the right margin.
