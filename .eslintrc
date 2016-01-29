@@ -1,26 +1,12 @@
 {
   "parser": "babel-eslint",
-  "plugins": ["react"],
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
-  },
-  "ecmaFeatures": {
-    "arrowFunctions": true,
-    "blockBindings": true,
-    "classes": true,
-    "defaultParams": true,
-    "destructuring": true,
-    "forOf": true,
-    "generators": true,
-    "modules": true,
-    "spread": true,
-    "templateStrings": true,
-    "jsx": true
-  },
+  "extends": "airbnb",
   "rules": {
-    "consistent-return": [0],
-    "quotes": [2, "double"]
+    "quotes": [2, "double"],
+    "indent": [2, 4, {"SwitchCase": 1}],
+    "curly": [2, "multi-or-nest", "consistent"],
+    "space-before-function-paren": [2, "never"],
+    "eqeqeq": [2, "smart"],
+    "object-curly-spacing": [2, "never"]
   }
 }
