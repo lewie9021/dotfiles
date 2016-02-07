@@ -7,6 +7,7 @@
     "curly": [2, "multi-or-nest", "consistent"],
     "space-before-function-paren": [2, "never"],
     "eqeqeq": [2, "smart"],
-    "object-curly-spacing": [2, "never"]
+    "object-curly-spacing": [2, "never"],
+    "comma-dangle": [2, "never"]
   }
 }
