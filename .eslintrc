@@ -8,6 +8,7 @@
     "space-before-function-paren": [2, "never"],
     "eqeqeq": [2, "smart"],
     "object-curly-spacing": [2, "never"],
-    "comma-dangle": [2, "never"]
+    "comma-dangle": [2, "never"],
+    "func-names": 0
   }
 }
