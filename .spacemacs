@@ -168,9 +168,6 @@ layers configuration. You are free to put any user code."
   (define-key evil-insert-state-map (kbd "C-a") 'back-to-indentation)
   (define-key evil-insert-state-map (kbd "C-e") 'move-end-of-line)
 
-  ;; Switching to a buffer will force normal mode.
-  (add-hook 'window-configuration-change-hook 'evil-force-normal-state)
-
   ;; Enable support for Dust templates.
   (add-to-list 'auto-mode-alist '("\\.dust\\'" . web-mode))
   (setq web-mode-engines-alist  '(("dust" . "\\.dust\\'")))
